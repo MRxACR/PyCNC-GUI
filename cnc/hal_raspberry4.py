@@ -45,6 +45,10 @@ def spindle_control(percent):
     """
     logging.info("spindle control: {}%".format(percent))
     print(f"spinning ...\t speed : {percent} %")
+    if percent == 0:
+        GPIO.output(SPINDLE_PWM_PIN, GPIO.LOW)
+    else:
+        GPIO.output(SPINDLE_PWM_PIN, GPIO.HIGH)
 
 
 def fan_control(on_off):
