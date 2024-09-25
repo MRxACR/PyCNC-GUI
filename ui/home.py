@@ -14,6 +14,7 @@ from ui.signals import Signals
 import os
 import webbrowser
 from PyQt6.QtGui import QTextCursor
+from config import Ui_ConfigWindow
 
 class GCodeExecWorker(QThread):
 
@@ -29,6 +30,9 @@ class GCodeExecWorker(QThread):
         self._is_paused = False
         self._mutex = QMutex()
         self._pause_condition = QWaitCondition()
+
+    
+
 
     def run(self):
         # emit started signal
@@ -97,6 +101,18 @@ class Ui_MainWindow(QMainWindow):
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
+        self.pushButton_4 = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_4.setMaximumSize(QtCore.QSize(100, 50))
+        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("ui/images/Services.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_4.setIcon(icon)
+        self.pushButton_4.setIconSize(QtCore.QSize(18, 18))
+        self.pushButton_4.setAutoDefault(True)
+        self.pushButton_4.setFlat(True)
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.verticalLayout.addWidget(self.pushButton_4)
+        self.pushButton_4.clicked.connect(self.openConfigWindow)
         self.widget = QtWidgets.QWidget(parent=self.centralwidget)
         self.widget.setMaximumSize(QtCore.QSize(16777215, 100))
         self.widget.setStyleSheet("")
@@ -219,6 +235,7 @@ class Ui_MainWindow(QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "PyCNC GUI V1.0"))
+        self.pushButton_4.setText(_translate("MainWindow", "Configuration"))
         self.groupBox_2.setTitle(_translate("MainWindow", "G-code"))
         self.label.setText(_translate("MainWindow", "chemin G-code :"))
         self.btn_path.setText(_translate("MainWindow", "..."))
@@ -381,3 +398,10 @@ class Ui_MainWindow(QMainWindow):
         cursor.movePosition(QTextCursor.MoveOperation.End)
         self.log_textarea.setTextCursor(cursor)
         self.log_textarea.ensureCursorVisible()
+    
+
+    def openConfigWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_ConfigWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
