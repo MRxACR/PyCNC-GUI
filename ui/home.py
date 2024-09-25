@@ -14,7 +14,7 @@ from ui.signals import Signals
 import os
 import webbrowser
 from PyQt6.QtGui import QTextCursor
-from config import Ui_ConfigWindow
+from ui.config import Ui_ConfigWindow
 
 class GCodeExecWorker(QThread):
 
