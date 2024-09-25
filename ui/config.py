@@ -650,7 +650,7 @@ class Ui_ConfigWindow(object):
         except Exception as e:
             print(f"An error occurred while updating settings: {e}")
 
-        ConfigWindow.close()
+        self.pushButton.click()
 
     
 
