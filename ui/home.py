@@ -264,7 +264,7 @@ class Ui_MainWindow(QMainWindow):
             # Browser disabled
             #self.btn_zenbreak : self.btnZenbreak,
             self.btn_path : self.btnPath,
-            self.btn_start : self.btnstart,
+            self.btn_start : self.btnStart,
             self.btn_stop : self.btnStop,
             self.btn_pause : self.btnPause,
         }
