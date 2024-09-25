@@ -261,9 +261,10 @@ class Ui_MainWindow(QMainWindow):
 
         # list of all buttons and their actions
         buttons_actions = {
-            self.btn_zenbreak : self.btnZenbreak,
+            # Browser disabled
+            #self.btn_zenbreak : self.btnZenbreak,
             self.btn_path : self.btnPath,
-            self.btn_start : self.btnStart,
+            self.btn_start : self.btnstart,
             self.btn_stop : self.btnStop,
             self.btn_pause : self.btnPause,
         }
