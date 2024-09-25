@@ -241,8 +241,8 @@ class Ui_MainWindow(QMainWindow):
         self.btn_path.setText(_translate("MainWindow", "..."))
         self.groupBox_3.setTitle(_translate("MainWindow", "Commande"))
         self.groupBox.setTitle(_translate("MainWindow", "Collaborateurs"))
-        self.label_2.setText(_translate("MainWindow", "Yahia Mouhemed"))
-        self.label_3.setText(_translate("MainWindow", "Yahia Yassin"))
+        self.label_2.setText(_translate("MainWindow", "Yahia Mohammed"))
+        self.label_3.setText(_translate("MainWindow", "Lalame Yassin"))
         self.groupBox_4.setTitle(_translate("MainWindow", "Logs"))
 
     def setupBack(self): # setup the backend (events and connctions)
