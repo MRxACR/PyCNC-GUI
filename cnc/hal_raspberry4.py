@@ -12,7 +12,7 @@ def init():
     """ Initialize GPIO pins and machine itself.
     """
     GPIO.cleanup()
-
+    GPIO.setmode(GPIO.BCM)
     GPIO.setup(STEPPER_STEP_PIN_X, GPIO.OUT)
     GPIO.setup(STEPPER_STEP_PIN_Y, GPIO.OUT)
     GPIO.setup(STEPPER_STEP_PIN_Z, GPIO.OUT)
