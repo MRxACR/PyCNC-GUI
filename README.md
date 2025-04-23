@@ -1,5 +1,5 @@
 
-![Logo](/assets/8740775/26766365/ui/images/Zenbreak Electronics.png)
+![Logo](https://github.com/MRxACR/PyCNC-GUI/blob/master/ui/images/Zenbreak%20Electronics.png)
 
 # 🛠️ PyCNC-GUI
 
